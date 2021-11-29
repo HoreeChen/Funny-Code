@@ -18,7 +18,7 @@
 							userInfo.nickname ||
 							userInfo.realname ||
 							userInfo.username ||
-								'登录/注册'
+								'请完善信息'
 						}}
 					</text>
 				</view>
