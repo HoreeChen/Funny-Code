@@ -18,7 +18,7 @@
 							userInfo.nickname ||
 							userInfo.realname ||
 							userInfo.username ||
-								'请完善信息'
+								'请登录'
 						}}
 					</text>
 				</view>
@@ -274,6 +274,12 @@ export default {
 			return tag;
 		}
 	},
+	onLoad() {
+		console.log(this._i18n)
+		console.log(this._i18n.t)
+		console.log(this._i18n.t('profile.notice'))
+		this._i18n.t('profile.notice')
+	},
   computed: {
     // 判断推广中心是否显示 当有分销商信息的时候显示
     settingItemShowFilter() {
@@ -289,13 +295,14 @@ export default {
     },
 		settingList() {
 			return [
-				{ icon: 'icongonggao', url: '/pages/index/notice/notice', title: this._i18n.t('profile.notice'), color: '#ff6b81' },
+				{ icon: 'icongonggao', url: '/pages/index/notice/notice', title: "商城公告", color: '#ff6b81' },
 				{ icon: 'iconyouhuiquan-copy', url: '/pages/user/coupon/list', title: this._i18n.t('profile.couponCenter'), color: '#ff6b81' },
 				{ icon: 'icondizhi1', url: '/pages/user/address/address', title: this._i18n.t('profile.addressManage'), color: '#ff6b81' },
 				{ icon: 'iconshoucang3', url: '/pages/user/collection/collection', title: this._i18n.t('profile.myCollection'), color: '#ff6b81' },
 				{ icon: 'iconfenxiang', url: '', title: this._i18n.t('profile.share'), color: '#ff6b81' },
 				{ icon: 'iconzhibo', url: '/pages/marketing/live/list', title: this._i18n.t('profile.live'), color: '#ff6b81' },
-				{ icon: 'iconshezhi3', url: '/pages/set/set', title: this._i18n.t('profile.setting'), color: '#ff6b81' }
+				{ icon: 'iconshezhi3', url: '/pages/set/set', title: this._i18n.t('profile.setting'), color: '#ff6b81' },
+				{ icon: 'iconyouhuiquan-copy', url: '/pages/lingquanzhongxin/lingquanzhongxin', title: "领券中心", color: '#ff6b81' }
 			];
 		}
   },
@@ -311,7 +318,6 @@ export default {
 		// // console.log(this.$http)
 		// var token111 = uni.getStorageSync('accessToken');
 		// // var token111 = 1;
-		console.log(this.mapMutations)
 		await this.initData();
 	},
 	// #ifndef MP
@@ -391,10 +397,9 @@ export default {
 			await this.$http
 				.get(memberInfo)
 				.then(async r => {
-					console.log(r);
-					console.log(r.data)
+					// console.log(r);
+					// console.log(r.data)
 					const horee = uni.getStorageSync("loginMobile")
-					console.log(this.horee)
 					this.loading = false;
 					this.userInfo = r.data;
 					await this.setCartNum(r.data.cart_num);

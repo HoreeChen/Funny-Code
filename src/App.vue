@@ -75,8 +75,8 @@ export default {
 		// 检验token是否有效
 		async handleVerifyAccessToken (token) {
       await this.$http.post(verifyAccessToken, { token }).then(r => {
-				console.log(r);
-				console.log(token);
+				// console.log(r);
+				// console.log(token);
         if (!r.data.token) {
 					this.$mStore.commit('logout');
         }

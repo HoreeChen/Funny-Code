@@ -81,9 +81,11 @@
 								}}</view>
 								<view class="remark" v-else>{{ row.remark }}</view>
 								<view class="number" v-if="parseInt(row.status, 10) === 1">
+									<!-- 计数器减号 -->
 									<view class="sub" @tap.stop="sub(row, index)">
 										<text class="iconfont icon icon-jianhao"></text>
 									</view>
+									<!-- 计数器中间数量显示部分 -->
 									<view class="input" @tap.stop="discard">
 										<input
 											type="number"
@@ -92,6 +94,7 @@
 											@input.stop="numberChange(row, $event, index)"
 										/>
 									</view>
+									<!-- 计数器加号 -->
 									<view class="add" @tap.stop="add(row, index)">
 										<text class="iconfont icon iconjia1"></text>
 									</view>
@@ -464,6 +467,7 @@ export default {
 		discard() {},
 		// 监听购物车商品数量改变
 		async numberChange(item, data, index, type) {
+			console.log(999)
 			if (data) {
 				this.cartList[index].number = data.detail.value;
 			}
@@ -754,4 +758,5 @@ page {
 	bottom: 0;
 	// #endif
 }
+
 </style>

@@ -191,10 +191,12 @@
 		}
 
 		Vue.prototype.$t = function (key) {
+			console.log(this.$i18n)
 			var values = [], len = arguments.length - 1;
 			while ( len-- > 0 ) values[ len ] = arguments[ len + 1 ];
 
 			var i18n = this.$i18n;
+			
 			return i18n._t.apply(i18n, [ key, i18n.locale, i18n._getMessages(), this ].concat( values ))
 		};
 

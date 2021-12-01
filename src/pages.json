@@ -131,7 +131,16 @@
 				}
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/lingquanzhongxin/lingquanzhongxin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [
 		// 设置
 		{
