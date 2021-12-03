@@ -135,7 +135,7 @@
             "path" : "pages/lingquanzhongxin/lingquanzhongxin",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "领券中心2",
                 "enablePullDownRefresh": false
             }
             
