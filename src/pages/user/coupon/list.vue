@@ -130,6 +130,7 @@ export default {
 					}
 					this.loadingType = r.data.length === 10 ? 'more' : 'nomore';
 					this.couponList = [...this.couponList, ...r.data];
+					console.log(this.couponList)
 				})
 				.catch(err => {
 					this.couponList.length = 0;

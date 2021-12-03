@@ -218,6 +218,7 @@ export default {
 		this.getMyCouponList();
 	},
 	onLoad() {
+		console.log(222)
 		// 数据初始化
 		this.initData();
 		// 兼容H5下排序栏位置
@@ -301,7 +302,9 @@ export default {
 					}
 					this.loadingType = r.data.length === 10 ? 'more' : 'nomore';
 					this.couponList = [...this.couponList, ...r.data];
+					console.log(this.couponList)
 				})
+
 				.catch(() => {
 					this.loading = false;
 					if (type === 'refresh') {
